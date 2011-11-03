@@ -1,3 +1,9 @@
+# revision 24432
+# category Package
+# catalog-ctan /macros/latex/contrib/chet
+# catalog-date 2011-10-28 19:36:13 +0200
+# catalog-license lppl1.3
+# catalog-version 1.3
 Name:		texlive-chet
 Version:	1.3
 Release:	1
@@ -40,6 +46,7 @@ and to provide the look and feel of harvmac for readers.
 %doc %{_texmfdistdir}/doc/latex/chet/chetdoc.pdf
 %doc %{_texmfdistdir}/doc/latex/chet/chetdoc.tex
 %doc %{_texmfdistdir}/doc/latex/chet/chetmacros.txt
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -50,3 +57,5 @@ and to provide the look and feel of harvmac for readers.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
