@@ -1,4 +1,4 @@
-# revision 24432
+# revision 24468
 # category Package
 # catalog-ctan /macros/latex/contrib/chet
 # catalog-date 2011-10-28 19:36:13 +0200
@@ -6,7 +6,7 @@
 # catalog-version 1.3
 Name:		texlive-chet
 Version:	1.3
-Release:	1
+Release:	2
 Summary:	LaTeX class inspired by harvmac
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chet
@@ -42,6 +42,7 @@ and to provide the look and feel of harvmac for readers.
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/bibtex/bst/chet/chetref.bst
 %{_texmfdistdir}/tex/latex/chet/chet.sty
 %doc %{_texmfdistdir}/doc/latex/chet/README
 %doc %{_texmfdistdir}/doc/latex/chet/chetdoc.pdf
@@ -57,6 +58,6 @@ and to provide the look and feel of harvmac for readers.
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+cp -fpar bibtex tex doc %{buildroot}%{_texmfdistdir}
 mkdir -p %{buildroot}%{_tlpkgobjdir}
 cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
