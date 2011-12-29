@@ -22,16 +22,8 @@ Requires(post):	texlive-kpathsea
 The package is designed to streamline the work of typesetting,
 and to provide the look and feel of harvmac for readers.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -46,7 +38,6 @@ and to provide the look and feel of harvmac for readers.
 %doc %{_texmfdistdir}/doc/latex/chet/chetdoc.pdf
 %doc %{_texmfdistdir}/doc/latex/chet/chetdoc.tex
 %doc %{_texmfdistdir}/doc/latex/chet/chetmacros.txt
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -57,5 +48,3 @@ and to provide the look and feel of harvmac for readers.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar bibtex tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
