@@ -1,12 +1,12 @@
-# revision 28606
+# revision 32384
 # category Package
 # catalog-ctan /macros/latex/contrib/chet
-# catalog-date 2012-12-09 16:35:11 +0100
+# catalog-date 2013-12-11 21:08:43 +0100
 # catalog-license lppl1.3
-# catalog-version 1.5
+# catalog-version 1.6
 Name:		texlive-chet
-Version:	1.5
-Release:	5
+Version:	1.6
+Release:	1
 Summary:	LaTeX layout inspired by harvmac
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chet
