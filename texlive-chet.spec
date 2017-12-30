@@ -5,8 +5,8 @@
 # catalog-license lppl1.3
 # catalog-version 1.6
 Name:		texlive-chet
-Version:	1.6
-Release:	5
+Version:	2.2
+Release:	1
 Summary:	LaTeX layout inspired by harvmac
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chet
