@@ -1,6 +1,6 @@
 Name:		texlive-chet
 Version:	45081
-Release:	1
+Release:	2
 Summary:	LaTeX layout inspired by harvmac
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chet
