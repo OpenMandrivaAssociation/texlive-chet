@@ -1,43 +1,26 @@
-Name:		texlive-chet
-Version:	45081
-Release:	2
+%global tl_name chet
+%global tl_revision 78825
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.3a
+Release:	%{tl_revision}.1
 Summary:	LaTeX layout inspired by harvmac
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chet
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chet.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chet.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chet.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chet.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package is designed to streamline the work of typesetting,
-and to provide the look and feel of harvmac for readers.
+The package aims to streamline the work of typesetting, and to provide
+the look and feel of harvmac for readers. The package name stands for
+"Class for High Energy Theory", as the majority of individuals using
+harvmac for their papers were primarily working in high energy theory, a
+subfield of theoretical physics.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/bibtex/bst/chet/chetref.bst
-%{_texmfdistdir}/tex/latex/chet/chet.sty
-%doc %{_texmfdistdir}/doc/latex/chet/README
-%doc %{_texmfdistdir}/doc/latex/chet/chetdoc.pdf
-%doc %{_texmfdistdir}/doc/latex/chet/chetdoc.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar bibtex tex doc %{buildroot}%{_texmfdistdir}
