@@ -1,9 +1,9 @@
 %global tl_name chet
-%global tl_revision 78825
+%global tl_revision 79672
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	2.3a
+Version:	2.3b
 Release:	%{tl_revision}.1
 Summary:	LaTeX layout inspired by harvmac
 Group:		Publishing
